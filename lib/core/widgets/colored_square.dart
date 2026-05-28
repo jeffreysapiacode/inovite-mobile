@@ -2,12 +2,12 @@ import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
 class ColoredSquare extends StatelessWidget {
-
-  final rotate;
-  final width;
-  final height;
-  final color;
-  final borderRadius;
+  final double rotate;
+  final double width;
+  final double height;
+  final Color color;
+  final BorderRadius borderRadius;
+  final Widget? child;
 
   const ColoredSquare({
     super.key,
@@ -15,7 +15,8 @@ class ColoredSquare extends StatelessWidget {
     required this.width,
     required this.height,
     required this.color,
-    required this.borderRadius
+    required this.borderRadius,
+    this.child
   });
 
   @override
@@ -27,7 +28,7 @@ class ColoredSquare extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: borderRadius,
           boxShadow: const [
             BoxShadow(
               color: Color(0xFF000000),
@@ -36,6 +37,7 @@ class ColoredSquare extends StatelessWidget {
             ),
           ],
         ),
+        child: child,
       ),
     );
   }
