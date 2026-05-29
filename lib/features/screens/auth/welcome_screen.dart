@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inovite_mobile/core/widgets/colored_square.dart';
 
+import '../../../core/widgets/button.dart';
 import '../../../core/widgets/container_background.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -96,29 +97,11 @@ class WelcomeScreen extends StatelessWidget {
           ),
           Spacer(),
           // Login Button
-          GestureDetector(
-            onTap: () => print('Login Pressed!'),
-            child: SizedBox(
-              // Sets width to 90% of the screen
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: 55,
-              child: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Text(
-                  'login',
-                  style: GoogleFonts.fredoka(
-                    color: Color(0xFFD05353),
-                    fontSize: 24,
-                    // Reduced slightly to fit 35px height comfortably
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
+          Button(label: 'login',
+              labelColor: Color(0xFFD05353),
+              onTap: () {
+                print('Login Pressed!');
+              }
           ),
           // Sign Up Button
           GestureDetector(

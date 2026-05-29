@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/widgets/button.dart';
 import '../../../core/widgets/text_box.dart';
 import '../../../core/widgets/colored_square.dart';
 import '../../../core/widgets/container_background.dart';
@@ -86,9 +86,10 @@ class SignupScreen extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 0.0, bottom: 20.0),
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
                         isPassword: false,
+                        type: TextInputType.emailAddress,
                         onChanged: (text) {
                           print('Parent received change: $text');
                         },
@@ -103,9 +104,10 @@ class SignupScreen extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 0.0, bottom: 20.0),
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
                         isPassword: false,
+                        type: TextInputType.name,
                         onChanged: (text) {
                           print('Parent received change: $text');
                         },
@@ -123,6 +125,7 @@ class SignupScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
                       child: TextBox(
                         isPassword: true,
+                        type: TextInputType.text,
                         onChanged: (text) {
                           print('Parent received change: $text');
                         },
@@ -135,33 +138,14 @@ class SignupScreen extends StatelessWidget {
                 ),
                 // Sign Up Submit Button
                 Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('Signup Pressed!');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
-                      child: SizedBox(
-                        // Sets width to 90% of the screen
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: 55,
-                        child: Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFFFFFF),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Text(
-                            'signup',
-                            style: GoogleFonts.fredoka(
-                              color: Color(0xFF7253D0),
-                              fontSize: 24,
-                              // Reduced slightly to fit 35px height comfortably
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
+                    child: Button(
+                      label: 'signup',
+                      labelColor: Color(0xFF7253D0),
+                      onTap: () {
+                        print('Signup Pressed!');
+                      }
                     ),
                   ),
                 ),

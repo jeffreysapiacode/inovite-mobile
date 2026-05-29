@@ -6,12 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TextBox extends StatefulWidget {
   final bool isPassword;
+  final TextInputType type;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
 
   const TextBox({
     super.key,
     required this.isPassword,
+    required this.type,
     this.onChanged,
     this.onSubmitted,
   });
@@ -42,7 +44,7 @@ class _TextBoxState extends State<TextBox> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
-      height: 55,
+      height: 65,
       decoration: BoxDecoration(
         color: const Color(0xFFFFFFFF),
         borderRadius: BorderRadius.circular(10),
@@ -66,7 +68,7 @@ class _TextBoxState extends State<TextBox> {
         obscuringCharacter: '•',
         // Customizing how text selection handles (magnifier, copy/paste)
         selectionColor: Color(0x4C0000FF),
-        keyboardType: TextInputType.text,
+        keyboardType: widget.type,
         autocorrect: false,
         enableSuggestions: false,
         // Limit to alphanumeric characters and spaces
