@@ -94,8 +94,8 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          // Login Button
           Spacer(),
+          // Login Button
           GestureDetector(
             onTap: () => print('Login Pressed!'),
             child: SizedBox(
