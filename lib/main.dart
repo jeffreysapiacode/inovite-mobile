@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
-
-import 'features/screens/auth/welcome_screen.dart';
+import 'package:inovite_mobile/features/screens/auth/signup_screen.dart';
 
 void main() {
-  runApp(WelcomeScreen());
+  runApp(SignupScreen());
 }
