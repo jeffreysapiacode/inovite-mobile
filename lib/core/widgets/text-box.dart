@@ -1,15 +1,19 @@
+import 'dart:ffi';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextBox extends StatefulWidget {
+  final bool isPassword;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
 
   const TextBox({
     super.key,
+    required this.isPassword,
     this.onChanged,
-    this.onSubmitted
+    this.onSubmitted,
   });
 
   @override
@@ -57,10 +61,14 @@ class _TextBoxState extends State<TextBox> {
         ),
         cursorColor: Color(0xFF0000FF),
         backgroundCursorColor: Color(0xFFCCCCCC),
+        // Password Handling
+        obscureText: widget.isPassword,
+        obscuringCharacter: '•',
         // Customizing how text selection handles (magnifier, copy/paste)
         selectionColor: Color(0x4C0000FF),
         keyboardType: TextInputType.text,
         autocorrect: false,
+        enableSuggestions: false,
         // Limit to alphanumeric characters and spaces
         inputFormatters: [
           FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9\s]')),

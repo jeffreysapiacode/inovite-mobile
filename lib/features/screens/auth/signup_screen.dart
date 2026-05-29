@@ -8,7 +8,6 @@ import '../../../core/widgets/colored_square.dart';
 import '../../../core/widgets/container_background.dart';
 
 class SignupScreen extends StatelessWidget {
-
   SignupScreen({super.key});
 
   @override
@@ -83,18 +82,58 @@ class SignupScreen extends StatelessWidget {
             Column(
               children: [
                 Spacer(),
+                // Email Text Box
                 Center(
                   child: GestureDetector(
-                    child: TextBox(
-                      onChanged: (text) {
-                        print('Parent received change: $text');
-                      },
-                      onSubmitted: (text) {
-                        print('Parent received submit: $text');
-                      },
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 20.0),
+                      child: TextBox(
+                        isPassword: false,
+                        onChanged: (text) {
+                          print('Parent received change: $text');
+                        },
+                        onSubmitted: (text) {
+                          print('Parent received submit: $text');
+                        },
+                      ),
                     ),
                   ),
                 ),
+                // Display Name Text Box
+                Center(
+                  child: GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 20.0),
+                      child: TextBox(
+                        isPassword: false,
+                        onChanged: (text) {
+                          print('Parent received change: $text');
+                        },
+                        onSubmitted: (text) {
+                          print('Parent received submit: $text');
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                // Password Text Box
+                Center(
+                  child: GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
+                      child: TextBox(
+                        isPassword: true,
+                        onChanged: (text) {
+                          print('Parent received change: $text');
+                        },
+                        onSubmitted: (text) {
+                          print('Parent received submit: $text');
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                // Sign Up Submit Button
                 Center(
                   child: GestureDetector(
                     onTap: () {
