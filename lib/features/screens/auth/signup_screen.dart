@@ -3,11 +3,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/widgets/text-box.dart';
 import '../../../core/widgets/colored_square.dart';
 import '../../../core/widgets/container_background.dart';
 
 class SignupScreen extends StatelessWidget {
-  final TextEditingController _textController = TextEditingController();
 
   SignupScreen({super.key});
 
@@ -85,43 +85,20 @@ class SignupScreen extends StatelessWidget {
                 Spacer(),
                 Center(
                   child: GestureDetector(
-                    child: SizedBox(
-                      width: 200,
-                      height: 50,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        height: 55,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFFFFFFF),
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: const Color(0xFFD1D4F5),
-                            width: 4,
-                          ),
-                        ),
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: EditableText(
-                          controller: _textController,
-                          // This is the required parameter
-                          focusNode: FocusNode(),
-                          style: const TextStyle(
-                            color: Color(0xFF000000),
-                            fontSize: 16.0,
-                          ),
-                          cursorColor: Color(0xFF0000FF),
-                          backgroundCursorColor: Color(0xFFCCCCCC),
-                        ),
-                      ),
+                    child: TextBox(
+                      onChanged: (text) {
+                        print('Parent received change: $text');
+                      },
+                      onSubmitted: (text) {
+                        print('Parent received submit: $text');
+                      },
                     ),
                   ),
                 ),
                 Center(
                   child: GestureDetector(
                     onTap: () {
-                      String currentText = _textController.text;
                       print('Signup Pressed!');
-                      print(currentText);
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
