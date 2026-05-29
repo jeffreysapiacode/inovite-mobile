@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../core/widgets/text-box.dart';
+import '../../../core/widgets/text_box.dart';
 import '../../../core/widgets/colored_square.dart';
 import '../../../core/widgets/container_background.dart';
 
