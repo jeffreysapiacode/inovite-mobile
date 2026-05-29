@@ -8,7 +8,7 @@ import '../../../core/widgets/colored_square.dart';
 import '../../../core/widgets/container_background.dart';
 
 class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +88,7 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
+                        placeholderText: 'email',
                         isPassword: false,
                         type: TextInputType.emailAddress,
                         onChanged: (text) {
@@ -106,6 +107,7 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
+                        placeholderText: 'name',
                         isPassword: false,
                         type: TextInputType.name,
                         onChanged: (text) {
@@ -124,6 +126,7 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
                       child: TextBox(
+                        placeholderText: 'password',
                         isPassword: true,
                         type: TextInputType.text,
                         onChanged: (text) {

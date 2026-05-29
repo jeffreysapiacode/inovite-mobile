@@ -19,12 +19,12 @@ class Button extends StatelessWidget {
       child: SizedBox(
         // Sets width to 90% of the screen
         width: MediaQuery.of(context).size.width * 0.9,
-        height: 55,
+        height: 70,
         child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: Color(0xFFFFFFFF),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(50),
           ),
           child: Text(
             label,
