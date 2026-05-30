@@ -69,7 +69,7 @@ class _TextBoxState extends State<TextBox> {
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
               ),
-              cursorColor: Color(0xFF0000FF),
+              cursorColor: Color(0xFF000000),
               backgroundCursorColor: Color(0xFFCCCCCC),
               // Password Handling
               obscureText: widget.isPassword,
