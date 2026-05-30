@@ -2,6 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inovite_mobile/core/widgets/colored_square.dart';
+import 'package:inovite_mobile/features/screens/auth/login_screen.dart';
+import 'package:inovite_mobile/features/screens/auth/signup_screen.dart';
 
 import '../../../core/widgets/button.dart';
 import '../../../core/widgets/container_background.dart';
@@ -100,12 +102,30 @@ class WelcomeScreen extends StatelessWidget {
           Button(label: 'login',
               labelColor: Color(0xFFD05353),
               onTap: () {
-                print('Login Pressed!');
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(opacity: animation, child: child);
+                    },
+                  ),
+                );
               }
           ),
           // Sign Up Button
           GestureDetector(
-            onTap: () => print('Sign Up Pressed!'),
+            onTap: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) => const SignupScreen(),
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(opacity: animation, child: child);
+                  },
+                ),
+              );
+            },
             child: Padding(
               padding: const EdgeInsets.only(top: 17.0, bottom: 22.0),
               child: Text(

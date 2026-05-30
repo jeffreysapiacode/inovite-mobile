@@ -24,7 +24,9 @@ class SignupScreen extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: GestureDetector(
-                onTap: () => print('Back Pressed'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 420.0, right: 170.0),
                   child: SvgPicture.asset(
