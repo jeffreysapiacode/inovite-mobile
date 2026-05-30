@@ -88,6 +88,8 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
+                        textColor: const Color(0xFF7253D0),
+                        borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'email',
                         isPassword: false,
                         type: TextInputType.emailAddress,
@@ -107,6 +109,8 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
                       child: TextBox(
+                        textColor: const Color(0xFF7253D0),
+                        borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'name',
                         isPassword: false,
                         type: TextInputType.name,
@@ -126,6 +130,8 @@ class SignupScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
                       child: TextBox(
+                        textColor: const Color(0xFF7253D0),
+                        borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'password',
                         isPassword: true,
                         type: TextInputType.text,

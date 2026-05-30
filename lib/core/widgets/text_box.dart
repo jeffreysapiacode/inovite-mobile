@@ -6,6 +6,8 @@ class TextBox extends StatefulWidget {
   final bool isPassword;
   final TextInputType type;
   final String placeholderText;
+  final Color borderColor;
+  final Color textColor;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
 
@@ -14,6 +16,8 @@ class TextBox extends StatefulWidget {
     required this.isPassword,
     required this.type,
     required this.placeholderText,
+    required this.borderColor,
+    required this.textColor,
     this.onChanged,
     this.onSubmitted,
   });
@@ -53,7 +57,7 @@ class _TextBoxState extends State<TextBox> {
             decoration: BoxDecoration(
               color: const Color(0xFFFFFFFF),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: const Color(0xFFD1D4F5), width: 4),
+              border: Border.all(color: widget.borderColor, width: 4),
             ),
             alignment: Alignment.center,
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -61,7 +65,7 @@ class _TextBoxState extends State<TextBox> {
               controller: _controller,
               focusNode: _focusNode,
               style: GoogleFonts.fredoka(
-                color: Color(0xFF7253D0),
+                color: widget.textColor,
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
               ),
