@@ -1,12 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inovite_mobile/core/widgets/colored_square.dart';
+import 'package:inovite_mobile/core/widgets/components/colored_square.dart';
 import 'package:inovite_mobile/features/screens/auth/login_screen.dart';
 import 'package:inovite_mobile/features/screens/auth/signup_screen.dart';
 
-import '../../../core/widgets/button.dart';
-import '../../../core/widgets/container_background.dart';
+import '../../../core/widgets/components/button.dart';
+import '../../../core/widgets/components/container_background.dart';
+import '../../../core/widgets/transitions/slide_transition.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -104,11 +105,9 @@ class WelcomeScreen extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
-                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                      return FadeTransition(opacity: animation, child: child);
-                    },
+                  SlideRoute(
+                    page: const LoginScreen(),
+                    duration: const Duration(milliseconds: 150)
                   ),
                 );
               }
@@ -118,11 +117,9 @@ class WelcomeScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                PageRouteBuilder(
-                  pageBuilder: (context, animation, secondaryAnimation) => const SignupScreen(),
-                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                    return FadeTransition(opacity: animation, child: child);
-                  },
+                SlideRoute(
+                    page: const SignupScreen(),
+                    duration: const Duration(milliseconds: 150)
                 ),
               );
             },

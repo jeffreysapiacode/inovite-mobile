@@ -13,14 +13,12 @@ class Inovite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WidgetsApp(
-      color: const Color(0xFF000000), // Required root app identifier color
-      // Tell WidgetsApp how to generate route pages natively
+      color: const Color(0xFF000000),
       pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
         return PageRouteBuilder<T>(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) => builder(context),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Supply a native core animation (e.g., Fade)
             return FadeTransition(opacity: animation, child: child);
           },
         );

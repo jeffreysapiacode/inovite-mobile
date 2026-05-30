@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../core/widgets/button.dart';
-import '../../../core/widgets/text_box.dart';
-import '../../../core/widgets/colored_square.dart';
-import '../../../core/widgets/container_background.dart';
+import '../../../core/widgets/components/button.dart';
+import '../../../core/widgets/components/text_box.dart';
+import '../../../core/widgets/components/colored_square.dart';
+import '../../../core/widgets/components/container_background.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -14,7 +14,6 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('Tapped Outside');
         SystemChannels.textInput.invokeMethod('TextInput.hide');
       },
       child: ContainerBackground(
