@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inovite_mobile/core/widgets/transition/subtle_rocker.dart';
 
 import '../../../screen/auth/login_screen.dart';
 import '../../../screen/auth/signup_screen.dart';
@@ -14,6 +15,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ContainerBackground(
       child: Column(
         children: [
@@ -21,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           Stack(
             children: [
               // Yellow Square
-              Align(
+              SubtleRocker(child: Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20.0, left: 100.0),
@@ -33,9 +35,10 @@ class WelcomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(40),
                   ),
                 ),
-              ),
+              )),
+
               // Orange Square
-              Align(
+              SubtleRocker(child: Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 65.0, right: 30.0),
@@ -48,9 +51,10 @@ class WelcomeScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
+              )
               ),
               // Green Square
-              Align(
+              SubtleRocker(child: Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 150.0, right: 40.0),
@@ -64,8 +68,10 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              ),
               // Dark Gray Square
-              Align(
+              // SubtleRocker(child:
+                Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 200.0, right: 0.0),
@@ -96,21 +102,23 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              // ),
             ],
           ),
           Spacer(),
           // Login Button
-          Button(label: 'login',
-              labelColor: Color(0xFFD05353),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  SlideTransitionRoute(
-                    page: const LoginScreen(),
-                    duration: const Duration(milliseconds: 150)
-                  ),
-                );
-              }
+          Button(
+            label: 'login',
+            labelColor: Color(0xFFD05353),
+            onTap: () {
+              Navigator.push(
+                context,
+                SlideTransitionRoute(
+                  page: const LoginScreen(),
+                  duration: const Duration(milliseconds: 150),
+                ),
+              );
+            },
           ),
           // Sign Up Button
           GestureDetector(
@@ -118,8 +126,8 @@ class WelcomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 SlideTransitionRoute(
-                    page: const SignupScreen(),
-                    duration: const Duration(milliseconds: 150)
+                  page: const SignupScreen(),
+                  duration: const Duration(milliseconds: 150),
                 ),
               );
             },

@@ -6,6 +6,7 @@ import '../../../core/widgets/component/button.dart';
 import '../../../core/widgets/component/text_box.dart';
 import '../../../core/widgets/component/colored_square.dart';
 import '../../../core/widgets/component/container_background.dart';
+import '../../core/widgets/transition/subtle_rocker.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -20,25 +21,28 @@ class LoginScreen extends StatelessWidget {
         child: Stack(
           children: [
             // Back Button
-            Align(
-              alignment: Alignment.center,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 420.0, right: 170.0),
-                  child: SvgPicture.asset(
-                    'assets/img/svg/login-back-button.svg',
-                    width: 85,
-                    // height: 100,
-                    semanticsLabel: 'Back',
+            SubtleRocker(child:
+              Align(
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 420.0, right: 170.0),
+                    child: SvgPicture.asset(
+                      'assets/img/svg/login-back-button.svg',
+                      width: 85,
+                      // height: 100,
+                      semanticsLabel: 'Back',
+                    ),
                   ),
                 ),
               ),
             ),
             // Blue Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 300.0, left: 150.0),
@@ -51,8 +55,10 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
+            ),
             // White Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(top: 330.0, left: 50.0),
@@ -65,8 +71,10 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
+            ),
             // Ice Blue Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 40.0, right: 100.0),
@@ -78,6 +86,7 @@ class LoginScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                 ),
               ),
+            ),
             ),
             // Form Fields
             Column(

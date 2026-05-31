@@ -14,6 +14,8 @@ class BaseScreen extends StatefulWidget {
 
 class BaseScreenState extends State<BaseScreen> {
   int currentIndex = 0;
+  bool rightShift = false;
+
 
   final List<Widget> screens = [
     ExploreScreen(),
@@ -23,6 +25,7 @@ class BaseScreenState extends State<BaseScreen> {
 
   void onNavTap(int index) {
     setState(() {
+      rightShift = index > currentIndex;
       currentIndex = index;
     });
   }
@@ -47,15 +50,17 @@ class BaseScreenState extends State<BaseScreen> {
                 // --- MAIN CONTENT ---
                 Expanded(
                   child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 400),
+                    duration: const Duration(milliseconds: 200),
+                    reverseDuration: const Duration(milliseconds: 20000),
                     transitionBuilder:
                         (Widget child, Animation<double> animation) {
+
                           return SlideTransition(
                             position: Tween<Offset>(
-                              begin: const Offset(-2.0, 0.0),
+                              begin: (rightShift) ? Offset(-1.0, 0.0): Offset(1.0, 0.0),
                               end: Offset.zero,
                             ).animate(
-                                CurvedAnimation(parent: animation, curve: Curves.easeInOut)
+                                CurvedAnimation(parent: animation, curve: Curves.decelerate)
                             ),
                             child: child
                           );

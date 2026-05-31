@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:inovite_mobile/screen/auth/welcome_screen.dart';
 import 'package:inovite_mobile/screen/main/base_screen.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class Inovite extends StatelessWidget {
           },
         );
       },
-      home: const BaseScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

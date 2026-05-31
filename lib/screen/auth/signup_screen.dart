@@ -6,6 +6,7 @@ import '../../../core/widgets/component/button.dart';
 import '../../../core/widgets/component/text_box.dart';
 import '../../../core/widgets/component/colored_square.dart';
 import '../../../core/widgets/component/container_background.dart';
+import '../../core/widgets/transition/subtle_rocker.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -20,7 +21,8 @@ class SignupScreen extends StatelessWidget {
         child: Stack(
           children: [
             // Back Button
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: GestureDetector(
                 onTap: () {
@@ -36,9 +38,11 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            )
             ),
             // Purple Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(top: 50.0, left: 0.0),
@@ -51,8 +55,10 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
             ),
+            ),
             // Pink Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 400.0, left: 150.0),
@@ -65,8 +71,10 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
             ),
+            ),
             // Blue Square
-            Align(
+            SubtleRocker(child:
+              Align(
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(top: 500.0, left: 150.0),
@@ -78,6 +86,7 @@ class SignupScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                 ),
               ),
+            ),
             ),
             // Form Fields
             Column(
