@@ -22,7 +22,7 @@ class Inovite extends StatelessWidget {
           },
         );
       },
-      home: const WelcomeScreen(),
+      home: const BaseScreen(),
     );
   }
 }

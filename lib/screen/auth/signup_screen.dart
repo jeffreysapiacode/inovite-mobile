@@ -21,72 +21,72 @@ class SignupScreen extends StatelessWidget {
         child: Stack(
           children: [
             // Back Button
-            SubtleRocker(child:
-              Align(
-              alignment: Alignment.center,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 420.0, right: 170.0),
-                  child: SvgPicture.asset(
-                    'assets/img/svg/signup-back-button.svg',
-                    width: 85,
-                    // height: 100,
-                    semanticsLabel: 'Back',
+            SubtleRocker(
+              child: Align(
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 420.0, right: 170.0),
+                    child: SvgPicture.asset(
+                      'assets/img/svg/signup-back-button.svg',
+                      width: 85,
+                      // height: 100,
+                      semanticsLabel: 'Back',
+                    ),
                   ),
                 ),
               ),
-            )
             ),
             // Purple Square
-            SubtleRocker(child:
-              Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50.0, left: 0.0),
-                child: ColoredSquare(
-                  rotate: 30,
-                  width: 280,
-                  height: 280,
-                  color: const Color(0xFFB65AFC),
-                  borderRadius: BorderRadius.circular(60),
+            SubtleRocker(
+              child: Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 50.0, left: 0.0),
+                  child: ColoredSquare(
+                    rotate: 30,
+                    width: 280,
+                    height: 280,
+                    color: const Color(0xFFB65AFC),
+                    borderRadius: BorderRadius.circular(60),
+                  ),
                 ),
               ),
-            ),
             ),
             // Pink Square
-            SubtleRocker(child:
-              Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 400.0, left: 150.0),
-                child: ColoredSquare(
-                  rotate: 98,
-                  width: 150,
-                  height: 150,
-                  color: const Color(0xFFDC42ED),
-                  borderRadius: BorderRadius.circular(40),
+            SubtleRocker(
+              child: Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 400.0, left: 150.0),
+                  child: ColoredSquare(
+                    rotate: 98,
+                    width: 150,
+                    height: 150,
+                    color: const Color(0xFFDC42ED),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
                 ),
               ),
-            ),
             ),
             // Blue Square
-            SubtleRocker(child:
-              Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 500.0, left: 150.0),
-                child: ColoredSquare(
-                  rotate: 98,
-                  width: 150,
-                  height: 150,
-                  color: const Color(0xFF4C8EFF),
-                  borderRadius: BorderRadius.circular(40),
+            SubtleRocker(
+              child: Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 500.0, left: 150.0),
+                  child: ColoredSquare(
+                    rotate: 98,
+                    width: 150,
+                    height: 150,
+                    color: const Color(0xFF4C8EFF),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
                 ),
               ),
-            ),
             ),
             // Form Fields
             Column(
@@ -164,7 +164,7 @@ class SignupScreen extends StatelessWidget {
                       labelColor: Color(0xFF7253D0),
                       onTap: () {
                         print('Signup Pressed!');
-                      }
+                      },
                     ),
                   ),
                 ),

@@ -5,6 +5,8 @@ import 'package:inovite_mobile/screen/main/views/concepts_screen.dart';
 import 'package:inovite_mobile/screen/main/views/explore_screen.dart';
 import 'package:inovite_mobile/screen/main/views/teams_screen.dart';
 
+import '../../core/widgets/component/nav_button.dart';
+
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
 
@@ -16,23 +18,22 @@ class BaseScreenState extends State<BaseScreen> {
   int currentIndex = 0;
   bool rightShift = false;
 
-
   final List<Widget> screens = [
     ExploreScreen(),
     ConceptsScreen(),
-    TeamsScreen()
+    TeamsScreen(),
   ];
 
   void onNavTap(int index) {
     setState(() {
       rightShift = index > currentIndex;
       currentIndex = index;
+      print('Set');
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Stack(
       children: [
         Directionality(
@@ -42,10 +43,7 @@ class BaseScreenState extends State<BaseScreen> {
             child: Column(
               children: [
                 // --- HEADER ---
-                Container(
-                  height: 70,
-                  color: const Color(0xFFB5E1F5)
-                ),
+                Container(height: 70, color: const Color(0xFFB5E1F5)),
 
                 // --- MAIN CONTENT ---
                 Expanded(
@@ -54,15 +52,20 @@ class BaseScreenState extends State<BaseScreen> {
                     reverseDuration: const Duration(milliseconds: 20000),
                     transitionBuilder:
                         (Widget child, Animation<double> animation) {
-
                           return SlideTransition(
-                            position: Tween<Offset>(
-                              begin: (rightShift) ? Offset(-1.0, 0.0): Offset(1.0, 0.0),
-                              end: Offset.zero,
-                            ).animate(
-                                CurvedAnimation(parent: animation, curve: Curves.decelerate)
-                            ),
-                            child: child
+                            position:
+                                Tween<Offset>(
+                                  begin: (rightShift)
+                                      ? Offset(-1.0, 0.0)
+                                      : Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ).animate(
+                                  CurvedAnimation(
+                                    parent: animation,
+                                    curve: Curves.decelerate,
+                                  ),
+                                ),
+                            child: child,
                           );
                         },
                     child: KeyedSubtree(
@@ -81,77 +84,29 @@ class BaseScreenState extends State<BaseScreen> {
                     children: [
                       GestureDetector(
                         onTap: () => onNavTap(0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/img/svg/navigation-explore-icon.svg',
-                              // width: 40,
-                              height: 40,
-                              semanticsLabel: 'Explore',
-                              colorFilter: ColorFilter.mode(
-                                  currentIndex == 0 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF),
-                                BlendMode.srcIn,
-                              )
-                            ),
-                            Text(
-                              'Explore',
-                              style: GoogleFonts.freckleFace(
-                                  fontSize: 20,
-                                  color: currentIndex == 0 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF)
-                              ),
-                            ),
-                          ],
+                        child: NavButton(
+                          filename: 'navigation-explore-icon',
+                          label: 'Explore',
+                          index: 0,
+                          currentIndex: currentIndex,
                         ),
                       ),
                       GestureDetector(
                         onTap: () => onNavTap(1),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/img/svg/navigation-concepts-icon.svg',
-                              // width: 40,
-                              height: 40,
-                              semanticsLabel: 'Concepts',
-                              colorFilter: ColorFilter.mode(
-                                currentIndex == 1 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF),
-                                BlendMode.srcIn,
-                              )
-                            ),
-                            Text(
-                              'Concepts',
-                              style: GoogleFonts.freckleFace(
-                                  fontSize: 20,
-                                  color: currentIndex == 1 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF)
-                              ),
-                            ),
-                          ],
+                        child: NavButton(
+                          filename: 'navigation-concepts-icon',
+                          label: 'Concepts',
+                          index: 1,
+                          currentIndex: currentIndex,
                         ),
                       ),
                       GestureDetector(
                         onTap: () => onNavTap(2),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/img/svg/navigation-teams-icon.svg',
-                              // width: 40,
-                              height: 40,
-                              semanticsLabel: 'Teams',
-                              colorFilter: ColorFilter.mode(
-                                currentIndex == 2 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF),
-                                BlendMode.srcIn,
-                              )
-                            ),
-                            Text(
-                              'Teams',
-                              style: GoogleFonts.freckleFace(
-                                  fontSize: 20,
-                                  color: currentIndex == 2 ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF)
-                              ),
-                            ),
-                          ],
+                        child: NavButton(
+                          filename: 'navigation-teams-icon',
+                          label: 'Teams',
+                          index: 2,
+                          currentIndex: currentIndex,
                         ),
                       ),
                     ],

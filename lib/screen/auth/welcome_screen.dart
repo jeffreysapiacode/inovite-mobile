@@ -15,7 +15,6 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ContainerBackground(
       child: Column(
         children: [
@@ -23,55 +22,59 @@ class WelcomeScreen extends StatelessWidget {
           Stack(
             children: [
               // Yellow Square
-              SubtleRocker(child: Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 20.0, left: 100.0),
-                  child: ColoredSquare(
-                    rotate: 13,
-                    width: 125,
-                    height: 125,
-                    color: const Color(0xFFF7FF61),
-                    borderRadius: BorderRadius.circular(40),
+              SubtleRocker(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0, left: 100.0),
+                    child: ColoredSquare(
+                      rotate: 13,
+                      width: 125,
+                      height: 125,
+                      color: const Color(0xFFF7FF61),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
                   ),
                 ),
-              )),
+              ),
 
               // Orange Square
-              SubtleRocker(child: Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 65.0, right: 30.0),
-                  // Adjust offset as needed
-                  child: ColoredSquare(
-                    rotate: -10,
-                    width: 175,
-                    height: 175,
-                    color: const Color(0xFFF5DE4B),
-                    borderRadius: BorderRadius.circular(50),
+              SubtleRocker(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 65.0, right: 30.0),
+                    // Adjust offset as needed
+                    child: ColoredSquare(
+                      rotate: -10,
+                      width: 175,
+                      height: 175,
+                      color: const Color(0xFFF5DE4B),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
                 ),
-              )
               ),
               // Green Square
-              SubtleRocker(child: Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 150.0, right: 40.0),
-                  // Adjust offset as needed
-                  child: ColoredSquare(
-                    rotate: 30,
-                    width: 300,
-                    height: 300,
-                    color: const Color(0xFFA2ED42),
-                    borderRadius: BorderRadius.circular(60),
+              SubtleRocker(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 150.0, right: 40.0),
+                    // Adjust offset as needed
+                    child: ColoredSquare(
+                      rotate: 30,
+                      width: 300,
+                      height: 300,
+                      color: const Color(0xFFA2ED42),
+                      borderRadius: BorderRadius.circular(60),
+                    ),
                   ),
                 ),
-              ),
               ),
               // Dark Gray Square
               // SubtleRocker(child:
-                Align(
+              Align(
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 200.0, right: 0.0),
