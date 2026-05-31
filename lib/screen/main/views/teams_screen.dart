@@ -6,7 +6,7 @@ class TeamsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF3CC3F8),
+      color: const Color(0xFFD5FF63),
       child: const Center(child: Text('Teams')),
     );
   }

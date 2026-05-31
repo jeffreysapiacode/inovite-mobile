@@ -28,7 +28,6 @@ class BaseScreenState extends State<BaseScreen> {
     setState(() {
       rightShift = index > currentIndex;
       currentIndex = index;
-      print('Set');
     });
   }
 
@@ -36,6 +35,7 @@ class BaseScreenState extends State<BaseScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Main Content
         Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
@@ -91,6 +91,11 @@ class BaseScreenState extends State<BaseScreen> {
                           currentIndex: currentIndex,
                         ),
                       ),
+                      SizedBox(
+                        width: 2.0,
+                        height: 50.0,
+                        child: Container(color: Color(0xFFFFFFFF)),
+                      ),
                       GestureDetector(
                         onTap: () => onNavTap(1),
                         child: NavButton(
@@ -99,6 +104,11 @@ class BaseScreenState extends State<BaseScreen> {
                           index: 1,
                           currentIndex: currentIndex,
                         ),
+                      ),
+                      SizedBox(
+                        width: 2.0,
+                        height: 50.0,
+                        child: Container(color: Color(0xFFFFFFFF)),
                       ),
                       GestureDetector(
                         onTap: () => onNavTap(2),
@@ -115,6 +125,73 @@ class BaseScreenState extends State<BaseScreen> {
               ],
             ),
           ),
+        ),
+        // Global Controls
+        Padding(padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 15.0), child:
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            // Inovite Button
+              Container(
+                height: 65,
+                width: 65,
+                decoration: BoxDecoration(
+                  color: Color(0xFF27403D),
+                  borderRadius: BorderRadius.circular(50),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFF000000),
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                      offset: const Offset(7, 7),
+                    ),
+                  ],
+                ),
+                child: Container(
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(
+                    'assets/img/svg/inovite-logo-bulb.svg',
+                    width: 28,
+                    semanticsLabel: 'Inovite',
+                    // colorFilter: ColorFilter.mode(
+                    //   const Color(0xFFFFFFFF),
+                    //   BlendMode.srcIn,
+                    // ),
+                  ),
+                ),
+              ),
+            // User Button
+            Container(
+              height: 65,
+              width: 65,
+              decoration: BoxDecoration(
+                color: Color(0xFF29B6F7),
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFF000000),
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                    offset: const Offset(7, 7),
+                  ),
+                ],
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                // Prevents the SVG from expanding to fill the entire container
+                child: SvgPicture.asset(
+                  'assets/img/svg/inovite-agent-user.svg',
+                  semanticsLabel: 'User',
+                  colorFilter: ColorFilter.mode(
+                    const Color(0xFFFFFFFF),
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
         ),
       ],
     );

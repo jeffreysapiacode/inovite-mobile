@@ -8,41 +8,44 @@ class NavButton extends StatelessWidget {
   final String filename;
   final String label;
 
-  const NavButton({super.key,
+  const NavButton({
+    super.key,
     required this.index,
     required this.currentIndex,
     required this.filename,
-    required this.label
+    required this.label,
   });
 
-//   @override
-//   State<StatefulWidget> createState() => NavButtonState();
-// }
-//
-// class NavButtonState extends State<NavButton> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-              'assets/img/svg/${filename}.svg',
-              // width: 40,
-              height: 40,
-              semanticsLabel: label,
-              colorFilter: ColorFilter.mode(
-                currentIndex == index ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF),
-                BlendMode.srcIn,
-              )
+    return Container(
+      padding: const EdgeInsets.all(6.0), // Space inside the container
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          'assets/img/svg/${filename}.svg',
+          // width: 40,
+          height: 40,
+          semanticsLabel: label,
+          colorFilter: ColorFilter.mode(
+            currentIndex == index
+                ? const Color(0xFFF8FF37)
+                : const Color(0xFFFFFFFF),
+            BlendMode.srcIn,
           ),
-          Text(
-            label,
-            style: GoogleFonts.freckleFace(
-                fontSize: 20,
-                color: currentIndex == index ? const Color(0xFFF8FF37): const Color(0xFFFFFFFF)
-            ),
+        ),
+        Text(
+          label,
+          style: GoogleFonts.freckleFace(
+            fontSize: 20,
+            color: currentIndex == index
+                ? const Color(0xFFF8FF37)
+                : const Color(0xFFFFFFFF),
           ),
-        ],
-      );
+        ),
+      ],
+    ),
+    );
   }
 }
