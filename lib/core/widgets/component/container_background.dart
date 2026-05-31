@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
 class ContainerBackground extends StatelessWidget {
   final Widget? child;
 
-  const ContainerBackground({
-    super.key,
-    this.child
-  });
+  const ContainerBackground({super.key, this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +22,8 @@ class ContainerBackground extends StatelessWidget {
             ],
           ),
         ),
-        child: child
+        child: child,
       ),
     );
   }
-
 }
