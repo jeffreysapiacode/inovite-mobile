@@ -105,7 +105,7 @@ class WelcomeScreen extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  SlideRoute(
+                  SlideTransitionRoute(
                     page: const LoginScreen(),
                     duration: const Duration(milliseconds: 150)
                   ),
@@ -117,7 +117,7 @@ class WelcomeScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                SlideRoute(
+                SlideTransitionRoute(
                     page: const SignupScreen(),
                     duration: const Duration(milliseconds: 150)
                 ),

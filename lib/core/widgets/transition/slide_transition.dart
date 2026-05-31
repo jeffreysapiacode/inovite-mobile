@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-class SlideRoute extends PageRouteBuilder {
+class SlideTransitionRoute extends PageRouteBuilder {
   final Widget page;
   final Duration duration;
 
-  SlideRoute({
+  SlideTransitionRoute({
     required this.page,
     this.duration = const Duration(milliseconds: 150),
   }) : super(
@@ -18,7 +18,7 @@ class SlideRoute extends PageRouteBuilder {
                  begin: const Offset(-1.0, 0.0),
                  end: Offset.zero,
                ).animate(
-                 CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+                 CurvedAnimation(parent: animation, curve: Curves.easeInOut)
                );
 
            // Outgoing screen slides out from left to right
