@@ -1,9 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:inovite_mobile/screen/main/views/concepts_screen.dart';
+import 'package:inovite_mobile/screen/main/views/create_screen.dart';
+import 'package:inovite_mobile/screen/main/views/idea_screen.dart';
 import 'package:inovite_mobile/screen/main/views/explore_screen.dart';
-import 'package:inovite_mobile/screen/main/views/teams_screen.dart';
 
 import '../../core/widgets/component/nav_button.dart';
 
@@ -20,8 +19,8 @@ class BaseScreenState extends State<BaseScreen> {
 
   final List<Widget> screens = [
     ExploreScreen(),
-    ConceptsScreen(),
-    TeamsScreen(),
+    CreateScreen(),
+    IdeaScreen()
   ];
 
   void onNavTap(int index) {
@@ -96,6 +95,11 @@ class BaseScreenState extends State<BaseScreen> {
                         height: 50.0,
                         child: Container(color: Color(0xFFFFFFFF)),
                       ),
+                      SizedBox(
+                        width: 2.0,
+                        height: 50.0,
+                        child: Container(color: Color(0xFFFFFFFF)),
+                      ),
                       GestureDetector(
                         onTap: () => onNavTap(1),
                         child: NavButton(
@@ -105,20 +109,7 @@ class BaseScreenState extends State<BaseScreen> {
                           currentIndex: currentIndex,
                         ),
                       ),
-                      SizedBox(
-                        width: 2.0,
-                        height: 50.0,
-                        child: Container(color: Color(0xFFFFFFFF)),
-                      ),
-                      GestureDetector(
-                        onTap: () => onNavTap(2),
-                        child: NavButton(
-                          filename: 'navigation-teams-icon',
-                          label: 'Teams',
-                          index: 2,
-                          currentIndex: currentIndex,
-                        ),
-                      ),
+
                     ],
                   ),
                 ),

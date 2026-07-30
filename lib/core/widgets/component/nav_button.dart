@@ -37,8 +37,8 @@ class NavButton extends StatelessWidget {
         ),
         Text(
           label,
-          style: GoogleFonts.freckleFace(
-            fontSize: 20,
+          style: GoogleFonts.freeman(
+            fontSize: 19,
             color: currentIndex == index
                 ? const Color(0xFFF8FF37)
                 : const Color(0xFFFFFFFF),
