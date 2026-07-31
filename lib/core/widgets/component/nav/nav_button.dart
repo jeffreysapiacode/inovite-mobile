@@ -19,56 +19,41 @@ class NavButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(6.0), // Space inside the container
-      child: Stack(
-        alignment: Alignment.center,
+      width: 75.0,
+      height: 75.0,
+      // padding: const EdgeInsets.all(6.0),
+      decoration: BoxDecoration(
+        color: (currentIndex == index)
+            ? const Color(0xFF000000)
+            : const Color(0xFFFFFFFF),
+        borderRadius: BorderRadius.circular(16.0,), // Adjust corner roundness here
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          (currentIndex == index) ?
-          Container(
-            width: 70.0,
-            height: 200.0,
-            padding: const EdgeInsets.all(6.0),
-            decoration: BoxDecoration(
-              color: const Color(0xFF000000),
-              borderRadius: BorderRadius.circular(16.0), // Adjust corner roundness here
-            ),
-          ): Container(
-            width: 70.0,
-            height: 200.0,
-            padding: const EdgeInsets.all(6.0),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFFFFFF),
-              borderRadius: BorderRadius.circular(16.0), // Adjust corner roundness here
+          SvgPicture.asset(
+            'assets/img/svg/${filename}.svg',
+            // width: 40,
+            height: 40,
+            semanticsLabel: label,
+            colorFilter: ColorFilter.mode(
+              (currentIndex == index)
+                  ? const Color(0xFFFFFFFF)
+                  : const Color(0xFF000000),
+              BlendMode.srcIn,
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                'assets/img/svg/${filename}.svg',
-                // width: 40,
-                height: 40,
-                semanticsLabel: label,
-                colorFilter: ColorFilter.mode(
-                  (currentIndex == index)
-                      ? const Color(0xFFFFFFFF)
-                      : const Color(0xFF000000),
-                  BlendMode.srcIn,
-                ),
-              ),
-              (label != '')
-                  ? Text(
-                      label,
-                      style: GoogleFonts.freeman(
-                        fontSize: 19,
-                        color: currentIndex == index
-                            ? const Color(0xFFFFFFFF)
-                            : const Color(0xFF000000),
-                      ),
-                    )
-                  : const SizedBox.shrink(),
-            ],
-          ),
+          (label != '')
+              ? Text(
+                  label,
+                  style: GoogleFonts.freeman(
+                    fontSize: 19,
+                    color: currentIndex == index
+                        ? const Color(0xFFFFFFFF)
+                        : const Color(0xFF000000),
+                  ),
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );

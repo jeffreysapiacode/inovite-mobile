@@ -49,10 +49,10 @@ class BaseScreenState extends State<BaseScreen> {
             color: const Color(0xFFF5F5F5),
             child: Column(
               children: [
-                // --- HEADER ---
+                // HEADER
                 Container(height: 70, color: const Color(0xFFB5E1F5)),
 
-                // --- MAIN CONTENT ---
+                // BODY
                 Expanded(
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
@@ -80,7 +80,7 @@ class BaseScreenState extends State<BaseScreen> {
                   ),
                 ),
 
-                // --- FOOTER ---
+                // FOOTER
                 Container(
                   height: 77,
                   color: const Color(0xFFFFFFFF),
@@ -131,74 +131,74 @@ class BaseScreenState extends State<BaseScreen> {
             ),
           ),
         ),
-        // Global Controls
-        Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              // Inovite Button
-              Container(
-                height: 65,
-                width: 65,
-                decoration: BoxDecoration(
-                  color: Color(0xFF27403D),
-                  borderRadius: BorderRadius.circular(50),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF000000),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                      offset: const Offset(7, 7),
-                    ),
-                  ],
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: SvgPicture.asset(
-                    'assets/img/svg/inovite-logo-bulb.svg',
-                    width: 28,
-                    semanticsLabel: 'Inovite',
-                    // colorFilter: ColorFilter.mode(
-                    //   const Color(0xFFFFFFFF),
-                    //   BlendMode.srcIn,
-                    // ),
-                  ),
-                ),
-              ),
-              // User Button
-              Container(
-                height: 65,
-                width: 65,
-                decoration: BoxDecoration(
-                  color: Color(0xFF29B6F7),
-                  borderRadius: BorderRadius.circular(50),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF000000),
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                      offset: const Offset(7, 7),
-                    ),
-                  ],
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  // Prevents the SVG from expanding to fill the entire container
-                  child: SvgPicture.asset(
-                    'assets/img/svg/inovite-agent-user.svg',
-                    semanticsLabel: 'User',
-                    colorFilter: ColorFilter.mode(
-                      const Color(0xFFFFFFFF),
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        // HEADER
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 15.0),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     crossAxisAlignment: CrossAxisAlignment.end,
+        //     children: [
+        //       // USER BUTTON
+        //       Container(
+        //         height: 65,
+        //         width: 65,
+        //         decoration: BoxDecoration(
+        //           color: Color(0xFF27403D),
+        //           borderRadius: BorderRadius.circular(50),
+        //           boxShadow: [
+        //             BoxShadow(
+        //               color: Color(0xFF000000),
+        //               blurRadius: 0.0,
+        //               spreadRadius: 0.0,
+        //               offset: const Offset(7, 7),
+        //             ),
+        //           ],
+        //         ),
+        //         child: Container(
+        //           alignment: Alignment.center,
+        //           child: SvgPicture.asset(
+        //             'assets/img/svg/inovite-logo-bulb.svg',
+        //             width: 28,
+        //             semanticsLabel: 'Inovite',
+        //             // colorFilter: ColorFilter.mode(
+        //             //   const Color(0xFFFFFFFF),
+        //             //   BlendMode.srcIn,
+        //             // ),
+        //           ),
+        //         ),
+        //       ),
+        //       // User Button
+        //       Container(
+        //         height: 65,
+        //         width: 65,
+        //         decoration: BoxDecoration(
+        //           color: Color(0xFF29B6F7),
+        //           borderRadius: BorderRadius.circular(50),
+        //           boxShadow: [
+        //             BoxShadow(
+        //               color: Color(0xFF000000),
+        //               blurRadius: 0.0,
+        //               spreadRadius: 0.0,
+        //               offset: const Offset(7, 7),
+        //             ),
+        //           ],
+        //         ),
+        //         child: Container(
+        //           alignment: Alignment.center,
+        //           // Prevents the SVG from expanding to fill the entire container
+        //           child: SvgPicture.asset(
+        //             'assets/img/svg/inovite-agent-user.svg',
+        //             semanticsLabel: 'User',
+        //             colorFilter: ColorFilter.mode(
+        //               const Color(0xFFFFFFFF),
+        //               BlendMode.srcIn,
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }
