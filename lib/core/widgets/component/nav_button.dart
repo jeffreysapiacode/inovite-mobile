@@ -31,19 +31,19 @@ class NavButton extends StatelessWidget {
           colorFilter: ColorFilter.mode(
             currentIndex == index
                 ? const Color(0xFFF8FF37)
-                : const Color(0xFFFFFFFF),
+                : const Color(0xFF000000),
             BlendMode.srcIn,
           ),
         ),
-        Text(
+        (label != '') ? Text(
           label,
           style: GoogleFonts.freeman(
             fontSize: 19,
             color: currentIndex == index
                 ? const Color(0xFFF8FF37)
-                : const Color(0xFFFFFFFF),
+                : const Color(0xFF000000),
           ),
-        ),
+        ): const SizedBox.shrink(),
       ],
     ),
     );
