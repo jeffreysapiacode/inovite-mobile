@@ -4,7 +4,7 @@ import 'package:inovite_mobile/screen/main/views/create_screen.dart';
 import 'package:inovite_mobile/screen/main/views/idea_screen.dart';
 import 'package:inovite_mobile/screen/main/views/explore_screen.dart';
 
-import '../../core/widgets/component/nav_button.dart';
+import '../../core/widgets/component/nav/nav_button.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});

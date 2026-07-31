@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../core/widgets/component/button.dart';
-import '../../../core/widgets/component/text_box.dart';
-import '../../../core/widgets/component/colored_square.dart';
-import '../../../core/widgets/component/container_background.dart';
+import '../../core/widgets/component/global/button.dart';
+import '../../core/widgets/component/global/text_box.dart';
+import '../../core/widgets/component/global/colored_square.dart';
+import '../../core/widgets/component/global/container_background.dart';
 import '../../core/widgets/transition/subtle_rocker.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -5,9 +5,9 @@ import 'package:inovite_mobile/core/widgets/transition/subtle_rocker.dart';
 
 import '../../../screen/auth/login_screen.dart';
 import '../../../screen/auth/signup_screen.dart';
-import '../../../core/widgets/component/colored_square.dart';
-import '../../../core/widgets/component/button.dart';
-import '../../../core/widgets/component/container_background.dart';
+import '../../core/widgets/component/global/colored_square.dart';
+import '../../core/widgets/component/global/button.dart';
+import '../../core/widgets/component/global/container_background.dart';
 import '../../../core/widgets/transition/slide_transition.dart';
 
 class WelcomeScreen extends StatelessWidget {
