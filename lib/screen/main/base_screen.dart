@@ -27,7 +27,7 @@ class BaseScreenState extends State<BaseScreen> {
           offset = Offset(-1.0, 0.0);
           break;
         case 1:
-          offset = Offset(0.0, -1.0);
+          offset = Offset(0.0, 1.0);
           break;
         case 2:
           offset = Offset(1.0, 0.0);
@@ -47,64 +47,33 @@ class BaseScreenState extends State<BaseScreen> {
             color: const Color(0xFFFFFFFF),
             child: Column(
               children: [
-                // HEADER
-                // Stack
-                // // SVG Image of Radiator
-                // // Row - Spaced between
-                // Circle Container - White - Padding between button and radiator
-                /////// User Button
-                /////// Notification Button
                 Stack(
                   alignment: Alignment.center,
                   children: [
                     Container(height: 80, color: const Color(0xFFFFFFFF)),
                     Padding(
-                      padding: const EdgeInsets.only(top: 60.0),
+                      padding: const EdgeInsets.only(top: 43.0),
                       child: SvgPicture.asset(
                         'assets/img/svg/inovite-radiator.svg',
-                        // width: 40,
+                        // width: 300,
                         height: 55,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 60.0, left: 20.0, right: 20.0),
+                      padding: const EdgeInsets.only(top: 43.0, left: 5.0, right: 5.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SvgPicture.asset(
                             'assets/img/svg/inovite-logo-user-info.svg',
-                            width: 90,
-                            height: 90,
+                            // width: 100,
+                            height: 80,
                           ),
                           SvgPicture.asset(
                             'assets/img/svg/inovite-notifications.svg',
-                            width: 90,
-                            height: 90,
+                            // width: 90,
+                            height: 80,
                           )
-                          // Container(
-                          //   width: 65.0,
-                          //   height: 65.0,
-                          //   decoration: BoxDecoration(
-                          //     color: const Color(0xFFFFFFFF),
-                          //     shape: BoxShape.circle,
-                          //     border: Border.all(
-                          //       color: const Color(0xFF000000),
-                          //       width: 5,
-                          //     ),
-                          //   ),
-                          // ),
-                          // Container(
-                          //   width: 65.0,
-                          //   height: 65.0,
-                          //   decoration: BoxDecoration(
-                          //     color: const Color(0xFFFFFFFF),
-                          //     shape: BoxShape.circle,
-                          //     border: Border.all(
-                          //       color: const Color(0xFF000000),
-                          //       width: 5,
-                          //     ),
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),
@@ -141,7 +110,7 @@ class BaseScreenState extends State<BaseScreen> {
 
                 // FOOTER
                 Container(
-                  height: 77,
+                  height: 100,
                   color: const Color(0xFFFFFFFF),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
