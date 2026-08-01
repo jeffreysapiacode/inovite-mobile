@@ -44,7 +44,7 @@ class BaseScreenState extends State<BaseScreen> {
         Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
-            color: const Color(0xFFF5F5F5),
+            color: const Color(0xFFFFFFFF),
             child: Column(
               children: [
                 // HEADER
@@ -59,7 +59,7 @@ class BaseScreenState extends State<BaseScreen> {
                   children: [
                     Container(height: 80, color: const Color(0xFFFFFFFF)),
                     Padding(
-                      padding: const EdgeInsets.only(top: 40.0),
+                      padding: const EdgeInsets.only(top: 60.0),
                       child: SvgPicture.asset(
                         'assets/img/svg/inovite-radiator.svg',
                         // width: 40,
