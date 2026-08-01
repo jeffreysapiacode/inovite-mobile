@@ -5,9 +5,9 @@ import 'package:inovite_mobile/core/widgets/transition/subtle_rocker.dart';
 
 import '../../../screen/auth/login_screen.dart';
 import '../../../screen/auth/signup_screen.dart';
-import '../../core/widgets/component/global/colored_square.dart';
-import '../../core/widgets/component/global/button.dart';
-import '../../core/widgets/component/global/container_background.dart';
+import '../../core/widgets/component/auth/auth_colored_square.dart';
+import '../../core/widgets/component/auth/auth_button.dart';
+import '../../core/widgets/component/auth/auth_container_background.dart';
 import '../../../core/widgets/transition/slide_transition.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContainerBackground(
+    return AuthContainerBackground(
       child: Column(
         children: [
           // Graphics And Logo
@@ -27,7 +27,7 @@ class WelcomeScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20.0, left: 100.0),
-                    child: ColoredSquare(
+                    child: AuthColoredSquare(
                       rotate: 13,
                       width: 125,
                       height: 125,
@@ -45,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 65.0, right: 30.0),
                     // Adjust offset as needed
-                    child: ColoredSquare(
+                    child: AuthColoredSquare(
                       rotate: -10,
                       width: 175,
                       height: 175,
@@ -62,7 +62,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 150.0, right: 40.0),
                     // Adjust offset as needed
-                    child: ColoredSquare(
+                    child: AuthColoredSquare(
                       rotate: 30,
                       width: 300,
                       height: 300,
@@ -78,7 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 200.0, right: 0.0),
-                  child: ColoredSquare(
+                  child: AuthColoredSquare(
                     rotate: 0,
                     width: 230,
                     height: 230,
@@ -110,7 +110,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
           Spacer(),
           // Login Button
-          Button(
+          AuthButton(
             label: 'login',
             labelColor: Color(0xFFD05353),
             onTap: () {

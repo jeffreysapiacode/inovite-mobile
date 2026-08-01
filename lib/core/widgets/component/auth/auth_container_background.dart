@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-class ContainerBackground extends StatelessWidget {
+class AuthContainerBackground extends StatelessWidget {
   final Widget? child;
 
-  const ContainerBackground({super.key, this.child});
+  const AuthContainerBackground({super.key, this.child});
 
   @override
   Widget build(BuildContext context) {

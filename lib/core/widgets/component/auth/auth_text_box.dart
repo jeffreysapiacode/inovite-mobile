@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TextBox extends StatefulWidget {
+class AuthTextBox extends StatefulWidget {
   final bool isPassword;
   final TextInputType type;
   final String placeholderText;
@@ -11,7 +11,7 @@ class TextBox extends StatefulWidget {
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
 
-  const TextBox({
+  const AuthTextBox({
     super.key,
     required this.isPassword,
     required this.type,
@@ -23,10 +23,10 @@ class TextBox extends StatefulWidget {
   });
 
   @override
-  _TextBoxState createState() => _TextBoxState();
+  _AuthTextBoxState createState() => _AuthTextBoxState();
 }
 
-class _TextBoxState extends State<TextBox> {
+class _AuthTextBoxState extends State<AuthTextBox> {
   late TextEditingController _controller;
   late FocusNode _focusNode;
 

@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/widgets/component/global/button.dart';
-import '../../core/widgets/component/global/text_box.dart';
-import '../../core/widgets/component/global/colored_square.dart';
-import '../../core/widgets/component/global/container_background.dart';
+import '../../core/widgets/component/auth/auth_button.dart';
+import '../../core/widgets/component/auth/auth_text_box.dart';
+import '../../core/widgets/component/auth/auth_colored_square.dart';
+import '../../core/widgets/component/auth/auth_container_background.dart';
 import '../../core/widgets/transition/subtle_rocker.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
       onTap: () {
         SystemChannels.textInput.invokeMethod('TextInput.hide');
       },
-      child: ContainerBackground(
+      child: AuthContainerBackground(
         child: Stack(
           children: [
             // Back Button
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 300.0, left: 150.0),
-                child: ColoredSquare(
+                child: AuthColoredSquare(
                   rotate: 30,
                   width: 180,
                   height: 180,
@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(top: 330.0, left: 50.0),
-                child: ColoredSquare(
+                child: AuthColoredSquare(
                   rotate: -60,
                   width: 250,
                   height: 250,
@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 40.0, right: 100.0),
-                child: ColoredSquare(
+                child: AuthColoredSquare(
                   rotate: -14,
                   width: 190,
                   height: 190,
@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                   child: GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
-                      child: TextBox(
+                      child: AuthTextBox(
                         textColor: const Color(0xFF1BB0E2),
                         borderColor: const Color(0xFFB8DAF1),
                         placeholderText: 'email',
@@ -118,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                   child: GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
-                      child: TextBox(
+                      child: AuthTextBox(
                         textColor: const Color(0xFF1BB0E2),
                         borderColor: const Color(0xFFB8DAF1),
                         placeholderText: 'password',
@@ -138,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
-                    child: Button(
+                    child: AuthButton(
                       label: 'login',
                       labelColor: Color(0xFF11B7FE),
                       onTap: () {

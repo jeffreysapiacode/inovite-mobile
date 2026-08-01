@@ -1,12 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Button extends StatelessWidget {
+class AuthButton extends StatelessWidget {
   final String label;
   final Color? labelColor;
   final VoidCallback? onTap;
 
-  const Button({super.key,
+  const AuthButton({super.key,
     required this.label,
     this.labelColor,
     this.onTap

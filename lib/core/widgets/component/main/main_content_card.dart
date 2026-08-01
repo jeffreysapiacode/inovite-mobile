@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-class ListItemCard extends StatelessWidget {
+class MainContainerContentCard extends StatelessWidget {
+  const MainContainerContentCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

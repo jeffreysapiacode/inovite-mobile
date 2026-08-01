@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
-class ColoredSquare extends StatelessWidget {
+class AuthColoredSquare extends StatelessWidget {
   final double rotate;
   final double width;
   final double height;
@@ -9,7 +9,7 @@ class ColoredSquare extends StatelessWidget {
   final BorderRadius borderRadius;
   final Widget? child;
 
-  const ColoredSquare({
+  const AuthColoredSquare({
     super.key,
     required this.rotate,
     required this.width,

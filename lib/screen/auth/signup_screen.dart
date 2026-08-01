@@ -2,10 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/widgets/component/global/button.dart';
-import '../../core/widgets/component/global/text_box.dart';
-import '../../core/widgets/component/global/colored_square.dart';
-import '../../core/widgets/component/global/container_background.dart';
+import '../../core/widgets/component/auth/auth_button.dart';
+import '../../core/widgets/component/auth/auth_text_box.dart';
+import '../../core/widgets/component/auth/auth_colored_square.dart';
+import '../../core/widgets/component/auth/auth_container_background.dart';
 import '../../core/widgets/transition/subtle_rocker.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class SignupScreen extends StatelessWidget {
       onTap: () {
         SystemChannels.textInput.invokeMethod('TextInput.hide');
       },
-      child: ContainerBackground(
+      child: AuthContainerBackground(
         child: Stack(
           children: [
             // Back Button
@@ -46,7 +46,7 @@ class SignupScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50.0, left: 0.0),
-                  child: ColoredSquare(
+                  child: AuthColoredSquare(
                     rotate: 30,
                     width: 280,
                     height: 280,
@@ -62,7 +62,7 @@ class SignupScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 400.0, left: 150.0),
-                  child: ColoredSquare(
+                  child: AuthColoredSquare(
                     rotate: 98,
                     width: 150,
                     height: 150,
@@ -78,7 +78,7 @@ class SignupScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 500.0, left: 150.0),
-                  child: ColoredSquare(
+                  child: AuthColoredSquare(
                     rotate: 98,
                     width: 150,
                     height: 150,
@@ -97,7 +97,7 @@ class SignupScreen extends StatelessWidget {
                   child: GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
-                      child: TextBox(
+                      child: AuthTextBox(
                         textColor: const Color(0xFF7253D0),
                         borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'email',
@@ -118,7 +118,7 @@ class SignupScreen extends StatelessWidget {
                   child: GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 15.0),
-                      child: TextBox(
+                      child: AuthTextBox(
                         textColor: const Color(0xFF7253D0),
                         borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'name',
@@ -139,7 +139,7 @@ class SignupScreen extends StatelessWidget {
                   child: GestureDetector(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
-                      child: TextBox(
+                      child: AuthTextBox(
                         textColor: const Color(0xFF7253D0),
                         borderColor: const Color(0xFFD1D4F5),
                         placeholderText: 'password',
@@ -159,7 +159,7 @@ class SignupScreen extends StatelessWidget {
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.only(top: 50.0, bottom: 22.0),
-                    child: Button(
+                    child: AuthButton(
                       label: 'signup',
                       labelColor: Color(0xFF7253D0),
                       onTap: () {
