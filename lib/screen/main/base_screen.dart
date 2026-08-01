@@ -15,14 +15,12 @@ class BaseScreen extends StatefulWidget {
 
 class BaseScreenState extends State<BaseScreen> {
   int currentIndex = 0;
-  bool rightShift = false;
   Offset? offset;
 
   final List<Widget> screens = [ExploreScreen(), CreateScreen(), IdeaScreen()];
 
   void onNavTap(int index) {
     setState(() {
-      rightShift = index > currentIndex;
       currentIndex = index;
       switch (currentIndex) {
         case 0:
@@ -50,7 +48,68 @@ class BaseScreenState extends State<BaseScreen> {
             child: Column(
               children: [
                 // HEADER
-                Container(height: 70, color: const Color(0xFFB5E1F5)),
+                // Stack
+                // // SVG Image of Radiator
+                // // Row - Spaced between
+                // Circle Container - White - Padding between button and radiator
+                /////// User Button
+                /////// Notification Button
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(height: 80, color: const Color(0xFFFFFFFF)),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40.0),
+                      child: SvgPicture.asset(
+                        'assets/img/svg/inovite-radiator.svg',
+                        // width: 40,
+                        height: 55,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 60.0, left: 20.0, right: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/img/svg/inovite-logo-user-info.svg',
+                            width: 90,
+                            height: 90,
+                          ),
+                          SvgPicture.asset(
+                            'assets/img/svg/inovite-notifications.svg',
+                            width: 90,
+                            height: 90,
+                          )
+                          // Container(
+                          //   width: 65.0,
+                          //   height: 65.0,
+                          //   decoration: BoxDecoration(
+                          //     color: const Color(0xFFFFFFFF),
+                          //     shape: BoxShape.circle,
+                          //     border: Border.all(
+                          //       color: const Color(0xFF000000),
+                          //       width: 5,
+                          //     ),
+                          //   ),
+                          // ),
+                          // Container(
+                          //   width: 65.0,
+                          //   height: 65.0,
+                          //   decoration: BoxDecoration(
+                          //     color: const Color(0xFFFFFFFF),
+                          //     shape: BoxShape.circle,
+                          //     border: Border.all(
+                          //       color: const Color(0xFF000000),
+                          //       width: 5,
+                          //     ),
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
 
                 // BODY
                 Expanded(

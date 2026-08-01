@@ -21,7 +21,6 @@ class NavButton extends StatelessWidget {
     return Container(
       width: 75.0,
       height: 75.0,
-      // padding: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
         color: (currentIndex == index)
             ? const Color(0xFF000000)
